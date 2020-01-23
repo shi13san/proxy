@@ -1,0 +1,61 @@
+
+//this is the date function
+function stringMonth()
+{
+        this[0]  = "Jan";
+        this[1]  = "Feb";
+        this[2]  = "Mar";
+        this[3]  = "Apr";
+        this[4]  = "May";
+        this[5]  = "June";
+        this[6]  = "July";
+        this[7]  = "Aug";
+        this[8]  = "Sep";
+        this[9]  = "Oct";
+        this[10] = "Nov";
+        this[11] = "Dec";
+}
+
+function stringDay()
+{
+        this[0] = "Sun"; 
+        this[1] = "Mon"; 
+        this[2] = "Tue"; 
+        this[3] = "Wed"; 
+        this[4] = "Thur"; 
+        this[5] = "Fri"; 
+        this[6] = "Sat"; 
+}
+
+ALLMONTHS = new stringMonth;
+ALLDAYS = new stringDay;
+
+function writeDate()
+{
+        today = new Date;
+        var year = today.getYear();
+        if (year >= 96)
+        {
+                var yearstr = year;
+        }
+        else
+        {
+                var yearstr = year;
+        }
+
+        document.write(ALLDAYS[(today.getDay())]+", "+ALLMONTHS[(today.getMonth())]+ " " + today.getDate() + ", " + yearstr);
+}
+
+function writeDay()
+{
+        today = new Date;
+        document.write(ALLDAYS[(today.getDay())]);
+}
+
+function writeTime()
+{
+        today = new Date;
+        document.write(today.getHours() + ":" + today.getMinutes());
+}
+
+writeDate()

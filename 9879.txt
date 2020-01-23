@@ -1,0 +1,21 @@
+$(function(){
+	$.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
+	$('.submit').click(function(){
+		title = $('input[name="title"]').val();
+		tag = $('select[name="tag"]').val();
+		content = $('textarea[name="content"]').val();
+
+		$.ajax({
+			method: "POST",
+			url: "/news/edit",
+			data: { title: title, tag: tag, content: content },
+			dataType: "json"
+		})
+		.done(function( msg ) {
+			if(msg == 'success') {
+				window.location.href = '/news/list';
+			}
+		});
+	});
+
+});

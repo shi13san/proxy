@@ -1,6 +1,7 @@
-# proxy2
+# proxy
 
-HTTP/HTTPS proxy in a single python script
+HTTP/HTTPS proxy in a single python script, it will be analysed by classifier which have been trained already.
+Thanks inaz2, the proxy depends on his proxy2, add a classification feature.
 
 
 ## Features
